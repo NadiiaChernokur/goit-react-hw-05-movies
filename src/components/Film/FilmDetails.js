@@ -8,11 +8,8 @@ const FilmDetails = () => {
   const { movieId } = useParams();
   const [film, setFilm] = useState([]);
   const location = useLocation();
-  // console.log(location.state);
-  // const geners = film.genres[0].name;
 
   const ref = useRef(location.state);
-  // console.log(ref);
 
   useEffect(() => {
     const fetchData = async () => {

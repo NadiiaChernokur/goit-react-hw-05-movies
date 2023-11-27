@@ -2,8 +2,6 @@ import { Link, Outlet } from 'react-router-dom';
 import { FilmContainer, FilmMain, Paragraf } from './Film.styled';
 
 const Film = ({ film }) => {
-  // console.log(film.genres[0].name);
-
   return (
     <FilmContainer>
       <FilmMain>

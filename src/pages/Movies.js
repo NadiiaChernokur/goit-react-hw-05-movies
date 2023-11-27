@@ -4,14 +4,6 @@ import VisibleArray from 'components/Film/VisibleArray';
 import { useSearchParams } from 'react-router-dom';
 import { Form, List } from 'components/Movies.styled';
 
-// const STATUS = {
-//   IDEL: 'idel',
-//   PENDING: 'pending',
-//   REJECTED: 'rejected',
-//   RESOLVD: 'resolved',
-// };
-// const { IDEL, PENDING, REJECTED } = STATUS;
-
 const Movies = () => {
   const [allMovies, setAllMovies] = useState([]);
 
@@ -32,11 +24,6 @@ const Movies = () => {
 
     fetchData();
   }, [filter]);
-
-  //   const toFilterArray = () => {
-  //     // setAllMovies([]);
-  //     // setStatus(CHENGE);
-  //   };
 
   const visibleArray = e => {
     e.preventDefault();

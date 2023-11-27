@@ -2,7 +2,6 @@ import { Link, useLocation } from 'react-router-dom';
 
 const VisibleArray = ({ array }) => {
   const visibleLocation = useLocation();
-  // console.log(visibleLocation);
 
   return array.map(film => {
     return (
