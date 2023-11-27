@@ -1,18 +1,20 @@
 import { useEffect, useState } from 'react';
 import { getFilterMovies } from 'components/Getmovies';
-import VisibleArray from 'components/VisibleArray';
-// const v = 'lay';
-// console.log(getFilterMovies(v));
+import VisibleArray from 'components/Film/VisibleArray';
+import { useSearchParams } from 'react-router-dom';
 
 const Movies = () => {
-  const [filter, setFilter] = useState('');
   const [allMovies, setAllMovies] = useState([]);
-  const [submit, setSubmit] = useState(false);
+  //   const [submit, setSubmit] = useState(false);
+
+  const [params, setParams] = useSearchParams();
+  const filter = params.get('query') ?? '';
 
   useEffect(() => {
-    if (filter === '') {
-      return;
-    }
+    // if (!submit) {
+    //   return;
+    // }
+
     if (allMovies.length > 0) {
       return;
     }
@@ -27,24 +29,26 @@ const Movies = () => {
     };
 
     fetchData();
-  }, [allMovies, filter, submit]);
+  }, [allMovies, filter]);
 
-  //   const toFilterArray = value => {
-  //     return setFilter(value);
-  //   };
+  const toFilterArray = () => {
+    // setAllMovies([]);
+    // setSubmit(false);
+
+    console.log('bkbkb');
+  };
 
   const visibleArray = e => {
     e.preventDefault();
     const filterValue = e.target[0].value;
-    setFilter(filterValue);
+    setParams({ query: filterValue });
+    // setSubmit(true);
   };
 
   return (
     <div>
       <form onSubmit={v => visibleArray(v)}>
-        <input
-        //   onChange={evt => toFilterArray(evt.target.value)}
-        ></input>
+        <input onChange={toFilterArray}></input>
 
         <button type="submit">Search</button>
       </form>

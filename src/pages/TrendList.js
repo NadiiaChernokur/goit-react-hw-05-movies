@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { getMovies } from './Getmovies';
+import { getMovies } from '../components/Getmovies';
 import { useEffect } from 'react';
-import MapArray from './MapArray';
+
+import VisibleArray from '../components/Film/VisibleArray';
 
 const TrendList = () => {
   const [data, setData] = useState([]);
@@ -15,7 +16,7 @@ const TrendList = () => {
 
         setData(trendFilm);
       } catch (error) {
-        // console.error('Помилка отримання даних', error);
+        console.error('Помилка отримання даних', error);
       }
     };
 
@@ -27,7 +28,7 @@ const TrendList = () => {
       <h1>Trending today</h1>
       {data ? (
         <ul>
-          <MapArray array={data} />
+          <VisibleArray array={data} />
         </ul>
       ) : (
         <p>Завантаження...</p>
