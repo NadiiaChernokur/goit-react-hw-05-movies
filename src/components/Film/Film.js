@@ -12,7 +12,7 @@ const Film = ({ film }) => {
         ></img>
         <div>
           <h1>{film.title ? film.title : film.name}</h1>
-          <p>User score: {film.popularity}</p>
+          <p>User score: {film.popularity * 100} %</p>
           <p>
             <b>Overview</b>
           </p>
