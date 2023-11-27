@@ -18,7 +18,8 @@ const Cast = () => {
     };
 
     fetchData();
-  }, []);
+  }, [params.movieId]);
+
   return (
     <ul>
       <CastFilm cast={cast} />

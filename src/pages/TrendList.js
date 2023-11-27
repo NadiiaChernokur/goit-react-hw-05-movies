@@ -3,6 +3,7 @@ import { getMovies } from '../components/Getmovies';
 import { useEffect } from 'react';
 
 import VisibleArray from '../components/Film/VisibleArray';
+import { TrendListUl } from 'components/Film/VisibleArray.styled';
 
 const TrendList = () => {
   const [data, setData] = useState([]);
@@ -27,9 +28,9 @@ const TrendList = () => {
     <div>
       <h1>Trending today</h1>
       {data ? (
-        <ul>
+        <TrendListUl>
           <VisibleArray array={data} />
-        </ul>
+        </TrendListUl>
       ) : (
         <p>Завантаження...</p>
       )}

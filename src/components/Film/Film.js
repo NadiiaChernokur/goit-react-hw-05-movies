@@ -1,39 +1,45 @@
 import { Link, Outlet } from 'react-router-dom';
+import { FilmContainer, FilmMain, Paragraf } from './Film.styled';
 
 const Film = ({ film }) => {
-  // console.log(obj);
-  // obj.map(v => {
-  //   console.log(v.name);
-  //   return v;
-  // });
+  // console.log(film.genres[0].name);
 
   return (
-    <div>
-      <div>
+    <FilmContainer>
+      <FilmMain>
         <img
           src={`https://image.tmdb.org/t/p/w500${film.poster_path}`}
           alt={film.title ? film.title : film.name}
+          width={240}
         ></img>
         <div>
           <h1>{film.title ? film.title : film.name}</h1>
-          <p>User score {film.popularity}</p>
-          <p>Overview</p>
+          <p>User score: {film.popularity}</p>
+          <p>
+            <b>Overview</b>
+          </p>
           <p>{film.overview}</p>
-          <p>Genres</p>
-          <p>bbkbkj</p>
+          <p>
+            <b>Genres</b>
+          </p>
+          <p>{'film.genres[0].name'}</p>
         </div>
-      </div>
+      </FilmMain>
       <div>
         <p>Additional information</p>
         <Link to="cast">
-          <p>Cast</p>
+          <Paragraf>
+            <b>Cast</b>
+          </Paragraf>
         </Link>
         <Link to="reviews">
-          <p>Reviews</p>
+          <Paragraf>
+            <b>Reviews</b>
+          </Paragraf>
         </Link>
       </div>
       <Outlet />
-    </div>
+    </FilmContainer>
   );
 };
 
