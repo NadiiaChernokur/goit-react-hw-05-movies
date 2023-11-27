@@ -6,7 +6,7 @@ const Layout = () => {
     <Container>
       <Nav>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="movies">Movies</NavLink>
+        <NavLink to="/movies">Movies</NavLink>
       </Nav>
       <Outlet />
     </Container>
