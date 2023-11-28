@@ -20,7 +20,7 @@ const Film = ({ film }) => {
           <p>
             <b>Genres</b>
           </p>
-          <p>{'film.genres[0].name'}</p>
+          <p>{film.genres?.map(g => g.name).join(', ')}</p>
         </div>
       </FilmMain>
       <div>

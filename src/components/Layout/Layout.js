@@ -1,4 +1,4 @@
-import { Container, Nav } from 'components/Layout.styled';
+import { Container, Nav } from 'components/Layout/Layout.styled';
 import { NavLink, Outlet } from 'react-router-dom';
 
 const Layout = () => {

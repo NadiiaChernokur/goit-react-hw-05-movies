@@ -1,8 +1,8 @@
 import { Link, useLocation, useParams } from 'react-router-dom';
-import { getMoviesId } from '../Getmovies';
+import { getMoviesId } from '../components/Getmovies';
 import { useEffect, useRef, useState } from 'react';
-import Film from './Film';
-import { Button } from './FilmDetails.styled';
+import Film from '../components/Film/Film';
+import { Button } from '../components/Film/FilmDetails.styled';
 
 const FilmDetails = () => {
   const { movieId } = useParams();

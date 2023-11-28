@@ -5,12 +5,12 @@ import { Route, Routes } from 'react-router-dom';
 import Cast from './Cast/Cast';
 import Reviews from './Reviews/Reviews';
 import NotFoundPage from './NotFoundPage';
-import Layout from '../pages/Layout';
+import Layout from './Layout/Layout';
 import React, { Suspense } from 'react';
 
 const TrendList = React.lazy(() => import('pages/TrendList'));
 const Movies = React.lazy(() => import('pages/Movies'));
-const FilmDetails = React.lazy(() => import('./Film/FilmDetails'));
+const FilmDetails = React.lazy(() => import('../pages/FilmDetails'));
 
 export const App = () => {
   return (
