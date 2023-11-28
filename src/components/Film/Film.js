@@ -1,15 +1,22 @@
 import { Link, Outlet } from 'react-router-dom';
 import { FilmContainer, FilmMain, Paragraf } from './Film.styled';
+import { Img } from './FilmDetails.styled';
 
 const Film = ({ film }) => {
+  const defaultImg =
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwlxdVwOBOgwB0FAK_obeLbTw9U1A3geRqqh6RPvXrudBjPmwttyFdI9VacYfzx_FO4dE&usqp=CAU';
   return (
     <FilmContainer>
       <FilmMain>
-        <img
-          src={`https://image.tmdb.org/t/p/w500${film.poster_path}`}
+        <Img
+          src={
+            film.poster_path
+              ? `https://image.tmdb.org/t/p/w500${film.poster_path}`
+              : defaultImg
+          }
           alt={film.title ? film.title : film.name}
           width={240}
-        ></img>
+        ></Img>
         <div>
           <h1>{film.title ? film.title : film.name}</h1>
           <p>User score: {film.popularity * 100} %</p>

@@ -8,3 +8,7 @@ export const Button = styled.button`
   font-weight: bold;
   cursor: pointer;
 `;
+export const Img = styled.img`
+  width: 240;
+  height: 360px;
+`;
