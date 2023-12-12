@@ -3,6 +3,7 @@ import { FilmContainer, FilmMain, Paragraf } from './Film.styled';
 import { Img } from './FilmDetails.styled';
 
 const Film = ({ film }) => {
+  console.log(film);
   const defaultImg =
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwlxdVwOBOgwB0FAK_obeLbTw9U1A3geRqqh6RPvXrudBjPmwttyFdI9VacYfzx_FO4dE&usqp=CAU';
   return (
@@ -19,7 +20,7 @@ const Film = ({ film }) => {
         ></Img>
         <div>
           <h1>{film.title ? film.title : film.name}</h1>
-          <p>User score: {film.popularity * 100} %</p>
+          <p>User score: {Math.round(film.vote_average * 10)}%</p>
           <p>
             <b>Overview</b>
           </p>
@@ -28,6 +29,11 @@ const Film = ({ film }) => {
             <b>Genres</b>
           </p>
           <p>{film.genres?.map(g => g.name).join(', ')}</p>
+          {film.homepage && (
+            <a target="_blank" href={film.homepage} rel="noreferrer noopener">
+              <p>Watch</p>
+            </a>
+          )}
         </div>
       </FilmMain>
       <div>
